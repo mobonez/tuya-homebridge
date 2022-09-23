@@ -191,7 +191,6 @@ class TuyaPlatform {
         this.deviceAccessories.set(uuid, deviceAccessory);
         break;
         case 'wsdcg':
-        deviceAccessory = new TemperatureSensorAccessory(this, homebridgeAccessory, device);
         deviceAccessory = new TemperatureAndHumiditySensorAccessory(this, homebridgeAccessory, device);
         this.accessories.set(uuid, deviceAccessory.homebridgeAccessory);
         this.deviceAccessories.set(uuid, deviceAccessory);
