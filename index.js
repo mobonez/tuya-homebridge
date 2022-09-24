@@ -12,7 +12,6 @@ const AirPurifierAccessory = require('./lib/air_purifier_accessory');
 const WindowCoveringAccessory = require('./lib/window_covering_accessory');
 const ContactSensorAccessory = require('./lib/contactsensor_accessory');
 const LeakSensorAccessory = require('./lib/leak_sensor_accessory');
-const HumanPresenceSensorAccessory = require('./lib/humanpresencesensor_accessory');
 const TemperatureAndHumiditySensorAccessory = require('./lib/temperature_and_humidity_sensor_accessory');
 const MotionSensorAccessory = require('./lib/motionsensor_accessory')
 
@@ -183,11 +182,6 @@ class TuyaPlatform {
       case 'rqbj':
       case 'jwbj':
         deviceAccessory = new LeakSensorAccessory(this, homebridgeAccessory, device);
-        this.accessories.set(uuid, deviceAccessory.homebridgeAccessory);
-        this.deviceAccessories.set(uuid, deviceAccessory);
-        break;
-          case 'hps':
-        deviceAccessory = new HumanPresenceSensorAccessory(this, homebridgeAccessory, device);
         this.accessories.set(uuid, deviceAccessory.homebridgeAccessory);
         this.deviceAccessories.set(uuid, deviceAccessory);
         break;
